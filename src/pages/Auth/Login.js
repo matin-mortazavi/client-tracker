@@ -90,6 +90,8 @@ import user from "../../assets/SVGs/user-icon.svg";
 import lock from "../../assets/SVGs/lock.png";
 import { useState } from "react";
 import eye from "../../assets/SVGs/eye-slash.svg";
+import loginUser from "../../services/LoginService";
+
 function RegisterPage() {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const {
@@ -105,7 +107,7 @@ function RegisterPage() {
   };
 
   const onSubmit = (data) => {
-    // You can handle registration logic here
+    loginUser(data)
     console.log(data);
   };
 
@@ -127,7 +129,7 @@ function RegisterPage() {
             <Controller
               name="email"
               control={control}
-              rules={{ required: "Email is required", maxLength: 7 }}
+              rules={{ required: "Email is required" }}
               defaultValue={""}
               render={({ field }) => (
                 <>
