@@ -1,0 +1,250 @@
+@import './../../styles/abstracts/mixins' ;
+@import './../../styles//base/reset';
+@import './../../styles//base/typography';
+@import './../../styles/main.scss';
+
+.form-box
+{
+    width: 532px;
+    @include flex-container(center,center,column);
+  
+    background-color: white;
+    border-radius: 2.4rem;
+    // background: url('../../assets/images/Vector.jpg')  ;
+    
+    object-fit:cover;
+ 
+   
+     // background-color: blue;
+     margin: 172px 0;
+     padding: 0 6rem;
+
+}
+.form{
+    @include flex-container(center,center,column);
+    
+    height: 100%;
+  
+ 
+   background:linear-gradient(to bottom, rgb(255, 255, 255,.2), rgba(255, 255, 255, 1)),  url('../../assets/images/Vector.jpg') no-repeat ;
+   
+   background-size:100% 100%;
+   object-fit:fill;
+  
+    // background-color: blue;
+   
+  
+
+}
+.form__content{
+    @include flex-container(center,center,column);
+}
+.errorText{
+    caret-color: red;
+    color: white;
+    width: 400px;
+    font-size: 20rem;
+    height: 200px;
+}
+.form-wrapper{
+   
+  
+   
+  
+    display: flex;
+  
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--bg-light-default, #FAFAFA);
+}
+.img-wrapper{
+  
+}
+.form__img{
+    width: 412px;
+    height: 309px;
+    flex-shrink: 0;
+}
+
+.form__title{
+    color: $title-color;
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+.empty{
+   
+}
+.form__input{
+
+    background : none;
+    width: 25rem;
+    border: none;
+    outline: none;
+    padding: .8rem;
+    height: 5.6rem;
+   
+   
+}
+label{
+    position: absolute;
+    top: 50%;
+    right:3.8rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 1.4rem;
+    transition:all .2s ease-in-out;
+    color:$title-color
+
+}
+
+.inputField{
+    @include flex-container(center,center,column);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin: 1.6rem 5rem;
+    width: 31rem;
+   
+    border: 1px solid $border-gray;
+   
+   background-color: #ffffff65;
+    border-radius: 1.6rem;
+  
+ 
+   
+}
+.password-icon{
+   
+    position: absolute;
+    left: 5px;
+}
+.form__input:focus + label,
+.notEmpty label
+{
+    font-size: 1.2rem;
+    top: 5px;
+}
+
+
+
+.form__btn{
+
+    width: 31rem;
+    background: $primary-blue;
+    padding: 0 1.6rem;
+    margin: 1.6rem 0 ;
+    font-size: 1.6rem;
+    border-radius: 1.6rem;
+    height: 5.6rem;
+    border: none;
+    color: white;
+  
+    
+}
+
+.form__text{
+    font-size: 1.6rem;
+    color: $text-color;
+    font-weight: 400;
+    margin-bottom: 4rem;
+}
+
+  
+
+.form__link{
+    font-size: 1.6rem;
+    color: $title-color;
+    font-weight: 600;
+}
+.form__icon{
+    position: absolute;
+    width:2.4rem;
+    height: 2.4rem;
+    right: .5rem;
+}
+@media screen and (max-width : 1440px){
+    .form-box
+    {
+       
+        width: 399px;
+        margin: 130px 0;
+        padding: 0 4rem ;
+       
+        // background-color: blue;
+    
+    }
+    .form__img{
+        width: 309px;
+        height: 232px;
+        flex-shrink: 0;
+    }
+    .form__input{
+        width: 19rem;
+    }
+    .form__title{
+        font-size: 2.4rem;
+    }
+    label{
+      
+        right:2.9rem;
+       
+        font-size: 1.05rem;
+        transition:all .2s ease-in-out;
+    
+    }
+    .inputField{
+        height: 4.2rem;
+        margin: 1.2rem 4rem;
+        width: 22.5rem;
+        border-radius: 1.2rem;
+    }
+    .password-icon{
+        width: 1.9rem;
+        height: 1.9rem;
+        position: absolute;
+        left: .4rem;
+    }
+    .form__input:focus + label,
+    .notEmpty label
+    {
+        font-size: .9rem;
+        top: .4rem;
+    }
+    
+    
+  
+    .form__btn{
+    
+        width: 22.5rem;
+    
+        padding: 0 1.2rem;
+        font-size: 1.2rem;
+        border-radius: 1.2rem;
+        height: 4.2rem;
+        margin: 1.2rem 0 
+       
+      
+        
+    }
+    .form__text{
+        font-size: 1.2rem;
+       height: 1.2rem;
+        margin-bottom: 3rem;
+    }
+    
+      
+    
+    .form__link{
+        font-size: 1.2rem;
+       
+    }
+    .form__icon{
+      
+        width:1.9rem;
+        height:1.9rem;
+        right: .4rem;
+    }
+}
