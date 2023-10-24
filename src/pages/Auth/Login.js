@@ -129,7 +129,7 @@ function RegisterPage() {
             <Controller
               name="email"
               control={control}
-              rules={{ required: "Email is required", maxLength: 7 }}
+              rules={{ required: "Email is required" }}
               defaultValue={""}
               render={({ field }) => (
                 <>
