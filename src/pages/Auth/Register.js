@@ -153,9 +153,7 @@ function RegisterPage() {
                 )}
               />
               <label>ایمیل</label>
-              {errors.email && (
-                <p className={styles.errorText}>{errors.email.message}</p>
-              )}
+             
             </div>
             <div
               className={
@@ -189,9 +187,7 @@ function RegisterPage() {
                 alt=""
                 onClick={handlePasswordVisibility}
               ></img>
-              {errors.email && (
-                <p className={styles.errorText}>{errors.email.message}</p>
-              )}
+              
             </div>
 
             <button className={styles["form__btn"]} type="submit">

@@ -71,9 +71,7 @@ function CompliteData(data) {
                 )}
               />
               <label>نام</label>
-              {errors.name && (
-                <p className={styles.errorText}>{errors.name.message}</p>
-              )}
+             
             </div>
 
             <div
@@ -106,9 +104,7 @@ function CompliteData(data) {
                 valueAsNumber={true}
               />
               <label>سن </label>
-              {errors?.age && (
-                <p className={styles.errorText}>{errors.age.message}</p>
-              )}
+              
             </div>
 
             <button className={styles["form__btn"]} type="submit">

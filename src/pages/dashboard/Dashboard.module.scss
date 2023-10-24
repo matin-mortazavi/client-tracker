@@ -1,0 +1,17 @@
+@import "../../styles/main.scss";
+.dashboard{
+    display: flex;
+    height: 100vh;
+}
+.sidebar{
+    flex: 1;
+}
+.main{
+    flex: 14.75;
+    background-color: $bg-color;
+}
+.user{
+    flex: 5.85;
+   
+
+}
