@@ -106,7 +106,7 @@ function RegisterPage() {
   console.log(errors);
   const handlePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
-    console.log(passwordVisible);
+   
   };
 
   const navigate = useNavigate();
@@ -159,7 +159,7 @@ function RegisterPage() {
             </div>
             <div
               className={
-                watch("email")
+                watch("password")
                   ? `${styles.notEmpty} ${styles.inputField}`
                   : `${styles.inputField}`
               }
@@ -183,10 +183,11 @@ function RegisterPage() {
               />
               <label>پسورد</label>
               <img
-                onClick={handlePasswordVisibility}
+                
                 className={styles["password-icon"]}
                 src={eye}
                 alt=""
+                onClick={handlePasswordVisibility}
               ></img>
               {errors.email && (
                 <p className={styles.errorText}>{errors.email.message}</p>
