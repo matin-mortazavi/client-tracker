@@ -6,9 +6,19 @@
 .sidebar{
     flex: 1;
 }
-.main{
+.main-section{
+    padding: 8.2rem 9.6rem 6.8rem 9.6rem;
     flex: 14.75;
     background-color: $bg-color;
+}
+.roydad{
+    height: 300px;
+    width: 100%;
+    background-color: rgb(141, 48, 48);
+}
+.activity{
+    background-color: red;
+    height: 200px;
 }
 .user{
     flex: 5.85;
