@@ -1,0 +1,130 @@
+@import "../../../styles/abstracts/mixins";
+@import "../../../styles/abstracts/variables";
+body{
+    position: relative;
+}
+.floating-action{
+    position: relative;
+    @include flex-container(center,center,row);
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    background-color: $primary-blue;
+}
+.floating-action__item{
+   
+    font-weight: bold;
+    width: 2rem;
+    height: .4rem;
+    border-radius: .5rem;
+    background-color: white;
+    transition: all .3s ease-in-out;
+    
+}
+.floating-action__item--rotated{
+    margin-left: -2rem;
+    
+    // transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.rotated .floating-action__item{
+    
+    transform: rotate(-45deg);
+}
+
+.rotated .floating-action__item--rotated{
+    
+    
+    transform: rotate(45deg);
+    
+}
+
+.sub-menu__container{
+    @include flex-container(center,center,column);
+    // width: 6.4rem;
+    // height: 6.4rem;
+    width: 0;
+    height: 0;
+    // margin: 1rem 1rem 0 0 ;
+  
+    font-size: 20px;
+    color: black;
+    // position: absolute;
+    transition: all .2s ease-in;
+    opacity: 0;
+}
+.sub-menu__img-container{
+    background-color: rgb(255, 255, 255);
+    
+
+}
+
+.floating-action__sub-menu{
+   
+    position: absolute;
+    top: 0;
+    right: 0;
+   
+
+   
+}
+.rotated .floating-action__sub-menu{
+display: flex;
+}
+.rotated .floating-action__sub-menu .sub-menu__container:nth-child(1){
+    // top: -100px;
+    // right:0px;
+    
+    transform: translate(0px,-150px);
+    opacity: 1;
+      width: 6.4rem;
+    height: 6.4rem;
+   
+}
+
+
+.rotated .floating-action__sub-menu .sub-menu__container:nth-child(2){
+    transform: translate(-25px,-75px);
+ 
+    opacity: 1;
+      width: 6.4rem;
+    height: 6.4rem;
+}
+.rotated .floating-action__sub-menu .sub-menu__container:nth-child(3){
+    transform: translate(-50px,0px);
+  
+    opacity: 1;
+      width: 6.4rem;
+    height: 6.4rem;
+}
+
+.sub-menu__item-icon{
+    width: 5rem;
+    height: 5rem;
+}
+
+
+
+@media screen and (max-width : 1440px){
+    .floating-action{
+        @include flex-container(center,center,row);
+        width: 2.9rem;
+        height: 2.9rem;
+        
+    }
+    .floating-action__item{
+      
+        width: 1.5rem;
+        height: .3rem;
+        border-radius: .35rem;
+        
+        
+    }
+    .floating-action__item--rotated{
+        margin-left: -1.5rem;
+        
+      
+     
+    }
+}
