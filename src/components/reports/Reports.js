@@ -42,7 +42,7 @@ export default function Reports() {
       </div>
 
       <div className={styles["events"]}>
-      <p className={styles["events-title"]}>رویداد ها</p>
+    
       </div>
 
     </div>

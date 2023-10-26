@@ -6,6 +6,7 @@ import styles from "./Dashboard.module.scss";
 import SideBar from "../../components/sidebar/Sidebar";
 import Reports from "../../components/reports/Reports";
 import Events from "../../components/events/Events";
+import Activities from "../../components/activities/Activities"
 
 export default function Dashboard() {
   return (
@@ -19,10 +20,8 @@ export default function Dashboard() {
 
           <Reports></Reports>
           
-          <Events>
-          
-         </Events>
-          <div className={styles["activity"]}></div>
+     <Events></Events>     
+         <Activities></Activities>
           <div className={styles["category"]}></div>
 
         </div>
