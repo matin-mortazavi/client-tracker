@@ -1,15 +1,18 @@
 @import "../../styles/main.scss";
 .dashboard{
     display: flex;
+   
     // height: 100vh;
 }
 .sidebar{
     flex: 1;
+   
 }
 .main-section{
     padding: 8rem 9.6rem 6.8rem 9.6rem;
     flex: 14.75;
     background-color: $bg-color;
+    overflow:auto;
 }
 .roydad{
     height: 300px;

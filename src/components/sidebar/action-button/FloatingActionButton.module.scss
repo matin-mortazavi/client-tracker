@@ -111,6 +111,15 @@ display: flex;
     margin-top: .5rem;
 }
 
+.backdrop{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    background-color: rgba(128, 128, 128, 0.36);
+}
 
 
 
