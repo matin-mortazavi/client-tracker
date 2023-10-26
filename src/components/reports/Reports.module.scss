@@ -70,23 +70,7 @@
   }
   
  
-.reports-item{
-    position: relative;
-    @include flex-container(center,center,column);
-}
-.reports-icon{
-    width: 6.6rem;
-    height: 6.6rem;
-}
-.reports-icon__number{
-    font-size: 2.4rem;
-    color: white;
-    font-weight: 600;
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%,-50%);
-}
+
 
 
  @media screen and (max-width : 1440px) {
@@ -102,4 +86,14 @@
         box-shadow: $shadow;
       
      }
+     .report-item{
+        
+       
+        border-radius: 1.6rem;
+        height: 15rem;
+       
+        margin-right: 1.5rem;  
+    
+     }
+    
  }

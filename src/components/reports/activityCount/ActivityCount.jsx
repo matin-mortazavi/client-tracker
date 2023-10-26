@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./ActivityCount.module.scss"
-import emptyReport from "../../assets/SVGs/emptyreports.svg";
+import emptyReport from "../../../assets/SVGs/emptyreports.svg";
 export default function ActivityCount() {
   return (
  

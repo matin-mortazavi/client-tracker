@@ -5,6 +5,7 @@ import styles from "./Dashboard.module.scss";
 // import SideBar from "../../components/Dashboard/sidebar/SideBar";
 import SideBar from "../../components/sidebar/Sidebar";
 import Reports from "../../components/reports/Reports";
+import Events from "../../components/events/Events";
 
 export default function Dashboard() {
   return (
@@ -18,7 +19,9 @@ export default function Dashboard() {
 
           <Reports></Reports>
           
-          <div className={styles["roydad"]}></div>
+          <Events>
+          
+         </Events>
           <div className={styles["activity"]}></div>
           <div className={styles["category"]}></div>
 

@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Reports.module.scss";
 
-import ActivityCount from "../activityCount/ActivityCount";
-import MostActivities from "../mostActivites/MostActivities";
-import SummeryReport from "../summeryReport/SummeryReport";
+import ActivityCount from "./activityCount/ActivityCount";
+import MostActivities from "./mostActivites/MostActivities";
+import SummeryReport from "./summeryReport/SummeryReport";
 export default function Reports() {
   return (
     <div className={styles["reports"]}>
