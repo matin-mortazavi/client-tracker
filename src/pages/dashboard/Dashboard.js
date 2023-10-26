@@ -7,11 +7,12 @@ import SideBar from "../../components/sidebar/Sidebar";
 import Reports from "../../components/reports/Reports";
 import Events from "../../components/events/Events";
 import Activities from "../../components/activities/Activities"
+import User from "../../components/User/User";
 
 export default function Dashboard() {
   return (
     <>
-      {22 == 23 && <Navigate to={"/login"} />}
+      {!localStorage.getItem("userToken") && <Navigate to={"/login"} />}
       <div className={styles["dashboard"]}>
         <div className={styles["sidebar"]}>
           <SideBar></SideBar>
@@ -25,7 +26,9 @@ export default function Dashboard() {
           <div className={styles["category"]}></div>
 
         </div>
-        <div className={styles["user"]}></div>
+        <div className={styles["user"]}>
+          <User></User>
+        </div>
       </div>
     </>
   );

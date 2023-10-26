@@ -83,7 +83,7 @@
 
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 import styles from "./Form.module.scss"; // Import your CSS module
 import img from "../../assets/images/img.png";
 import user from "../../assets/SVGs/user-icon.svg";
@@ -109,6 +109,7 @@ function RegisterPage() {
   const onSubmit = (data) => {
     loginUser(data)
     console.log(data);
+    
   };
 
   return (

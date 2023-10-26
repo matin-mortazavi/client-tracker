@@ -85,7 +85,7 @@ function CompliteData(data) {
                 name="age"
                 control={control}
                 rules={{ required: "age is required" }}
-                defaultValue={0}
+                defaultValue={""}
                 render={({ field }) => (
                   <>
                     <img
