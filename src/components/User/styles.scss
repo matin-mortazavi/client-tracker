@@ -1,0 +1,23 @@
+@import "../../styles/main.scss";
+.idk{
+    padding: 4rem 4rem ;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.Calendar{
+    font-size: 1.6rem;
+    width: 28rem;
+    min-height: 20rem;
+}
+.Calendar__day.-rtl{
+    font-size: 1.4rem;
+}
+
+.Calendar__weekDays{
+    padding: 0 2rem;
+}
+.Calendar__day.-selected{
+    background-color: $primary-blue;
+}

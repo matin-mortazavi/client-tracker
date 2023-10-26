@@ -27,9 +27,9 @@ function RegisterPage() {
     console.log(passwordVisible);
   };
 
-  const onSubmit = (data) => {
-    loginUser(data);
-    console.log(data);
+  const onSubmit =async (data) => {
+    const idk = await loginUser(data);
+    console.log(idk);
   };
 
   return (
@@ -68,22 +68,13 @@ function RegisterPage() {
               />
               <label>ایمیل</label>
 
-              {errors.email &&
-                
-                  <ToastContainer
-                  position="bottom-right"
-                  autoClose={5000}
-                  hideProgressBar={false}
-                  newestOnTop={false}
-                  closeOnClick
-                  rtl={false}
-                  pauseOnFocusLoss
-                  draggable
-                  pauseOnHover
-                  theme="light"
-                />
-              }
+            
             </div>
+            {errors.email &&
+                
+               
+                <p className={styles["error-messege"]}>{errors.email.message}</p>
+              }
 
             <div
               className={
@@ -95,7 +86,7 @@ function RegisterPage() {
               <Controller
                 name="password"
                 control={control}
-                rules={{ required: "Password is required" }}
+                rules={{ required: "Password is required",minLength : 6 }}
                 defaultValue={""}
                 render={({ field }) => (
                   <>
@@ -119,6 +110,11 @@ function RegisterPage() {
               ></img>
               
             </div>
+            {errors.password &&
+                
+               
+                <p className={styles["error-messege"]}>{errors.password.message}</p>
+              }
 
             <button className={styles["form__btn"]} type="submit">
               ورود

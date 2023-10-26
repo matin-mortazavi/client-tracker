@@ -1,13 +1,21 @@
 import React from 'react'
-import { Datepicker,Calendar } from '@ijavad805/react-datepicker';
+import { useState } from 'react';
+import "react-modern-calendar-datepicker/lib/DatePicker.css";
+import { Calendar } from "react-modern-calendar-datepicker";
 
-import "./styles.css"
+import "./styles.scss"
 export default function User() {
 const dropDowm = document.querySelectorAll("div")
     console.log(dropDowm);
+    const [selectedDay, setSelectedDay] = useState(null);
   return (
-    <div> 
-        <Datepicker theme='green'></Datepicker>
+    <div className='idk'> 
+       <Calendar
+      value={selectedDay}
+      onChange={setSelectedDay}
+      shouldHighlightWeekends
+      locale="fa" // add this
+    />
         
     </div>
   )
