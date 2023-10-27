@@ -1,0 +1,50 @@
+@import "../../styles/main.scss";
+.Calendar{
+    font-size: 1.6rem;
+    width: 38rem;
+    height: 35rem;
+    min-height: auto;
+    background-color: #FAFAFA;
+}
+.Calendar__day.-rtl{
+    font-size: 1.8rem;
+}
+
+.Calendar__weekDays{
+    padding: 0 2rem;
+}
+.Calendar__day.-selected{
+    background-color: blue;
+}
+.Calendar__yearText{
+    font-size: 1.6rem;
+}
+.Calendar__monthText{
+    font-size: 1.6rem;
+}
+
+@media screen and (max-width : 1440px){
+    .Calendar{
+        font-size: 1.2rem;
+        width: 28.5rem;
+        height: 26.2rem;
+        min-height: auto;
+        background-color: #FAFAFA;
+    }
+    .Calendar__day.-rtl{
+        font-size: 1.3rem;
+    }
+    
+    .Calendar__weekDays{
+        padding: 0 1.5rem;
+    }
+    .Calendar__day.-selected{
+        background-color: blue;
+    }
+    .Calendar__yearText{
+        font-size: 1.2rem;
+    }
+    .Calendar__monthText{
+        font-size: 1.2rem;
+    }
+}

@@ -1,23 +1,8 @@
 @import "../../styles/main.scss";
-.idk{
+@import "../../styles/abstracts/mixins";
+@import "./custom.scss";
+.user-section{
     padding: 4rem 4rem ;
-  display: flex;
-  align-items: center;
-  justify-content: center; 
+@include flex-container(center,center,column);
 }
 
-.Calendar{
-    font-size: 1.6rem;
-    width: 28rem;
-    min-height: 20rem;
-}
-.Calendar__day.-rtl{
-    font-size: 1.4rem;
-}
-
-.Calendar__weekDays{
-    padding: 0 2rem;
-}
-.Calendar__day.-selected{
-    background-color: $primary-blue;
-}
