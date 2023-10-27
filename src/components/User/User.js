@@ -15,6 +15,7 @@ const dropDowm = document.querySelectorAll("div")
     <div className='user-section'> 
     <UserInfo></UserInfo>
        <Calendar
+    
       value={selectedDay}
       onChange={setSelectedDay}
       shouldHighlightWeekends
