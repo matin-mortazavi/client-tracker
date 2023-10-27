@@ -10,6 +10,7 @@ body{
     height: 3.8rem;
     border-radius: 50%;
     background-color: $primary-blue;
+    z-index: 99;
 }
 .floating-action__item{
    
@@ -117,7 +118,8 @@ display: flex;
     top: 50%;
     right: 50%;
     transform: translate(50%,-50%);
-    background-color: rgba(38, 37, 37, 0.36);
+    background-color: rgba(0, 0, 0, 0.56);
+    z-index: 98;
  
 }
 
@@ -162,8 +164,9 @@ display: flex;
         border-radius: 1.6rem;
     }
     .sub-menu__item-text{
-        font-size: 1.15rem;
+        font-size: 1.3rem;
         margin-top: .37rem;
+        white-space: nowrap;
     }
     .rotated .floating-action__sub-menu .sub-menu__container:nth-child(1){
     
