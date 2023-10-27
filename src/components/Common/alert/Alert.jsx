@@ -6,8 +6,7 @@ export default function Alert(props) {
     }
     console.log(console.log(type));
     const typeClass = {
-        error: styles.error, // styles.error is the SCSS module class
-        // Add more mappings for other types if needed
+        error: styles.error, 
       };
     const typeClassName = typeClass[props.type];
   return (

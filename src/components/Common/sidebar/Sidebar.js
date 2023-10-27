@@ -7,14 +7,14 @@ import { NavLink } from "react-router-dom";
 import { useRef } from "react";
 import FloatingActionButton from "./action-button/FloatingActionButton";
 export default function SideBar() {
-//   const [isRotated, setIsRotated] = useState(false);
-//   const rotatedClass = isRotated ? styles.rotated : ""
-//   const floatingActionHandler = () => {
-//     setIsRotated((prevState) => {
-//       return !prevState;
-//     });
-//     console.log(isRotated);
-//   };
+  const [isRotated, setIsRotated] = useState(false);
+  const rotatedClass = isRotated ? styles.rotated : ""
+  const floatingActionHandler = () => {
+    setIsRotated((prevState) => {
+      return !prevState;
+    });
+    console.log(isRotated);
+  };
   return (
     <div className={styles["sidebar"]}>
       <div className={styles["sidebar__icons"]}>

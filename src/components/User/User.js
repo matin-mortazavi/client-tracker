@@ -5,6 +5,7 @@ import { Calendar } from "react-modern-calendar-datepicker";
 import UserEvents from "./userEvents/UserEvents";
 import styles from  "./User.module.scss";
 import UserInfo from './userInfo/UserInfo';
+import './custom.scss'
 
 
 export default function User() {
