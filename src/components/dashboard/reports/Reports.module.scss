@@ -1,0 +1,102 @@
+@import "../../../styles/abstracts/mixins";
+@import "../../../styles/main.scss";
+.reports{
+    @include flex-container(center,center,column);
+    // display: flex;
+    // flex-direction: column;
+    margin-bottom: 5.6rem
+}
+.reports-details{
+    @include flex-container(space-between,center,row);
+    width: 100%;
+    margin-bottom : 1.6rem ;
+}
+
+.reports-title{
+   font-size: 1.8rem;
+   font-weight: 700;
+  
+}
+.reports-filtering{
+    @include flex-container(center,center,row)
+}
+
+.reports-filtering__item{
+    font-size: 1.4rem;
+    margin: 0 .8rem;
+    background-color: white;
+    padding: .4rem 8px;
+    border-radius: 1.2rem;
+    box-shadow :$shadow;
+    
+  
+ }
+ .items{
+    @include flex-container(space-between,center,row);
+    
+ 
+    width: 100%;
+ }
+ .report-item{
+   
+    background-color: white;
+    border-radius: 2.4rem;
+    height: 20rem;
+    @include flex-container(center,center,column);
+    box-shadow: $shadow;
+    flex: 0 0 auto; 
+    margin-right: 2rem;  
+
+ }
+
+
+ 
+
+.report-item:nth-child(1) {
+    flex: 1 0 0 ;
+    margin-right: 0;
+    
+  }
+
+  .report-item:nth-child(2) {
+    flex: 1.71 0 0 ;
+    
+  }
+
+  .report-item:nth-child(3) {
+   
+    flex: 1.35 0 0;
+
+  }
+  
+ 
+
+
+
+ @media screen and (max-width : 1440px) {
+    .reports-title{
+        font-size: 1.35rem;
+    }
+    .reports-filtering__item{
+        font-size: 1rem;
+        margin: 0 .6rem;
+     
+        padding: .3rem .6rem;
+        border-radius: .9rem;
+      
+      
+     }
+     .report-item{
+        
+       
+        border-radius: 1.6rem;
+        height: 15rem;
+       
+        margin-right: 1.5rem;  
+    
+     }
+     .reports{
+        margin-bottom: 4.2rem;
+     }
+    
+ }
