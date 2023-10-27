@@ -91,7 +91,7 @@ import { useState } from "react";
 import eye from "../../assets/SVGs/eye-slash.svg";
 import { Link, Navigate } from "react-router-dom";
 import { redirect } from "react-router-dom";
-
+import Alert from "../../components/alert/Alert";
 import { useNavigate } from "react-router-dom";
 
 import { registerUser } from "../../services/registerUser";
@@ -105,6 +105,9 @@ function RegisterPage() {
   } = useForm({
     mode : "onBlur"
   });
+  const [showAlert, setShowAlert] = useState(false);
+  let alertType;
+  const [type, setType] = useState("error");
   console.log(errors);
   const handlePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -113,15 +116,21 @@ function RegisterPage() {
 
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    console.log(errors);
-    console.log(data);
-
+  const onSubmit = async(data) => {
+   
     navigate("/complite-data/", { state: { data } });
   };
 
   return (
     <div className={styles["form-wrapper"]}>
+       {showAlert && (
+        <Alert
+         text = "طلاعات وارد شده اشتباه است"
+          title= "خظا"
+         
+          type={type}
+        ></Alert>
+      )}
       <div className={styles["form-box"]}>
         <div className={styles.form}>
           <img className={styles["form__img"]} src={img} alt="not founded" />
@@ -140,7 +149,7 @@ function RegisterPage() {
               <Controller
                 name="email"
                 control={control}
-                rules={{ required: "Email is required" }}
+                rules={{ required: "این فیلدالزامی است" }}
                 defaultValue={""}
                 render={({ field }) => (
                   <>
@@ -172,7 +181,7 @@ function RegisterPage() {
               <Controller
                 name="password"
                 control={control}
-                rules={{ required: "Password is required" }}
+                rules={{ required: "این فیلد الزامی است " }}
                 defaultValue={""}
                 render={({ field }) => (
                   <>

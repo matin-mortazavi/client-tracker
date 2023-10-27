@@ -10,16 +10,21 @@ import eye from "../../assets/SVGs/eye-slash.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import loginUser from "../../services/LoginService";
+import Alert from "../../components/alert/Alert";
 
 function RegisterPage() {
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  let alertType;
+  const [type, setType] = useState("error");
+
   const {
     control,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm({
-    mode: 'onBlur', // Set the mode to 'onBlur'
+    mode: "onBlur", // Set the mode to 'onBlur'
   });
   console.log(errors);
   const handlePasswordVisibility = () => {
@@ -27,13 +32,28 @@ function RegisterPage() {
     console.log(passwordVisible);
   };
 
-  const onSubmit =async (data) => {
-    const idk = await loginUser(data);
-    console.log(idk);
+  const onSubmit = async (data) => {
+    const type = await loginUser(data);
+
+    setType(type);
+    console.log(alertType);
+
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 2000);
   };
 
   return (
     <div className={styles["form-wrapper"]}>
+      {showAlert && (
+        <Alert
+         text = "طلاعات وارد شده اشتباه است"
+          title= "خظا"
+         
+          type={type}
+        ></Alert>
+      )}
       <div className={styles["form-box"]}>
         <div className={styles.form}>
           <img className={styles["form__img"]} src={img} alt="not founded" />
@@ -52,7 +72,7 @@ function RegisterPage() {
               <Controller
                 name="email"
                 control={control}
-                rules={{ required: "Email is required" }}
+                rules={{  required: "این فیلد الزامی است" }}
                 defaultValue={""}
                 render={({ field }) => (
                   <>
@@ -67,14 +87,10 @@ function RegisterPage() {
                 )}
               />
               <label>ایمیل</label>
-
-            
             </div>
-            {errors.email &&
-                
-               
-                <p className={styles["error-messege"]}>{errors.email.message}</p>
-              }
+            {errors.email && (
+              <p className={styles["error-messege"]}>{errors.email.message}</p>
+            )}
 
             <div
               className={
@@ -86,7 +102,13 @@ function RegisterPage() {
               <Controller
                 name="password"
                 control={control}
-                rules={{ required: "Password is required",minLength : 6 }}
+                rules={{
+                  required: "این فیلد الزامی است",
+                  minLength: {
+                    value: 6,
+                    message: "رمز عبور باید دارای حداقل ۶ کراکتر باشد",
+                  },
+                }}
                 defaultValue={""}
                 render={({ field }) => (
                   <>
@@ -102,19 +124,17 @@ function RegisterPage() {
               />
               <label>پسورد</label>
               <img
-                
                 className={styles["password-icon"]}
                 src={eye}
                 alt=""
                 onClick={handlePasswordVisibility}
               ></img>
-              
             </div>
-            {errors.password &&
-                
-               
-                <p className={styles["error-messege"]}>{errors.password.message}</p>
-              }
+            {errors.password && (
+              <p className={styles["error-messege"]}>
+                {errors.password.message}
+              </p>
+            )}
 
             <button className={styles["form__btn"]} type="submit">
               ورود
