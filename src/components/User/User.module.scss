@@ -1,0 +1,8 @@
+@import "../../styles/main.scss";
+@import "../../styles/abstracts/mixins";
+@import "./custom.scss";
+.user-section{
+    padding: 4rem 4rem ;
+@include flex-container(center,center,column);
+}
+

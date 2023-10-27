@@ -10,17 +10,22 @@ import eye from "../../assets/SVGs/eye-slash.svg";
 import calendar from "../../assets/SVGs/calendar.svg";
 import { useLocation } from "react-router-dom";
 import registerUser from "../../services/registerUser";
+import Alert from "../../components/Common/alert/Alert";
 
 function CompliteData(data) {
   const location = useLocation();
-
+  const [showAlert, setShowAlert] = useState(false);
+  let alertType;
+  const [type, setType] = useState("error");
   const [ageVisible, setageVisible] = useState(false);
   const {
     control,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode: "onBlur",
+  });
   console.log(errors);
   const handleageVisibility = () => {
     setageVisible(!ageVisible);
@@ -28,16 +33,31 @@ function CompliteData(data) {
   };
   // console.log(location.state , 'hi');
 
-  const onSubmit = (data) => {
-    console.log("age type : ", data);
+  const onSubmit = async (data) => {
     // You can handle registration logic here
     data.age = Number(data.age);
     const newUser = { ...location.state.data, ...data };
     registerUser(newUser);
+    const type = await registerUser(newUser);
+
+    setType(type);
+    console.log(alertType);
+
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 2000);
   };
 
   return (
     <div className={styles["form-wrapper"]}>
+      {showAlert && (
+        <Alert
+          text="طلاعات وارد شده اشتباه است"
+          title="خطا"
+          type={type}
+        ></Alert>
+      )}
       <div className={styles["form-box"]}>
         <div className={styles.form}>
           <img className={styles["form__img"]} src={img} alt="not founded" />
@@ -56,7 +76,7 @@ function CompliteData(data) {
               <Controller
                 name="name"
                 control={control}
-                rules={{ required: "Name is required", maxLength: 16 }}
+                rules={{ required: "این فیلد الزامی است", maxLength: 16 }}
                 defaultValue={""}
                 render={({ field }) => (
                   <>
@@ -71,10 +91,10 @@ function CompliteData(data) {
                 )}
               />
               <label>نام</label>
-              {errors.name && (
-                <p className={styles.errorText}>{errors.name.message}</p>
-              )}
             </div>
+            {errors.name && (
+              <p className={styles["error-messege"]}>{errors.name.message}</p>
+            )}
 
             <div
               className={`${styles.inputField} ${
@@ -86,8 +106,8 @@ function CompliteData(data) {
               <Controller
                 name="age"
                 control={control}
-                rules={{ required: "age is required" }}
-                defaultValue={0}
+                rules={{ required: "این فیلد الزامی است" }}
+                defaultValue={""}
                 render={({ field }) => (
                   <>
                     <img
@@ -106,11 +126,10 @@ function CompliteData(data) {
                 valueAsNumber={true}
               />
               <label>سن </label>
-              {errors?.age && (
-                <p className={styles.errorText}>{errors.age.message}</p>
-              )}
             </div>
-
+            {errors.age && (
+              <p className={styles["error-messege"]}>{errors.age.message}</p>
+            )}
             <button className={styles["form__btn"]} type="submit">
               تایید
             </button>

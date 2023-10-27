@@ -1,0 +1,40 @@
+@import "../../../../styles/abstracts/mixins";
+@import "../../../../styles/main";
+
+.event-item{
+   
+    background-color: white;
+    border-radius: 2.4rem;
+    height: 24.2rem;
+    flex : 1 ;
+    @include flex-container(center,center,column);
+    box-shadow: $shadow;
+   
+    margin-right: 2rem;  
+
+ }
+
+
+ 
+
+
+ 
+.event-item:first-child{
+    margin-right: 0;
+}
+
+
+
+ @media screen and (max-width : 1440px) {
+    
+     .event-item{
+        
+       
+        border-radius: 1.6rem;
+        height: 20.2rem;
+        width: 28.5rem;
+        margin-right: 1.5rem;  
+    
+     }
+    
+ }

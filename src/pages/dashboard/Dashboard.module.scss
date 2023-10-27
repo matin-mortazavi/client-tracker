@@ -1,0 +1,39 @@
+@import "../../styles/main.scss";
+.dashboard{
+    display: flex;
+   
+    // height: 100vh;
+}
+.sidebar{
+    flex: 1;
+   
+}
+.main-section{
+    padding: 8rem 9.6rem 6.8rem 9.6rem;
+    flex: 14.75;
+    background-color: $bg-color;
+    overflow:auto;
+}
+.roydad{
+    height: 300px;
+    width: 100%;
+    background-color: rgb(141, 48, 48);
+}
+.activity{
+    background-color: red;
+    height: 200px;
+}
+.user{
+    flex: 5.85;
+  
+
+   
+
+}
+@media screen and (max-width :1440px) {
+    .main-section{
+        padding: 6rem 7.2rem 5.1rem 7.2rem;
+        flex: 14.75;
+        background-color: $bg-color;
+    }
+}
