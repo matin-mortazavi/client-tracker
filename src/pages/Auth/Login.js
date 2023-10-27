@@ -49,7 +49,7 @@ function RegisterPage() {
       {showAlert && (
         <Alert
          text = "طلاعات وارد شده اشتباه است"
-          title= "خظا"
+          title= "خطا"
          
           type={type}
         ></Alert>

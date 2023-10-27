@@ -17,7 +17,7 @@ export default function Alert(props) {
         <p className= {styles.text}>{props.text}</p>
      
       </div>
-    <div className='backdrop'></div>
+    <div className={styles['backdrop']}></div>
     </>
   )
 }
