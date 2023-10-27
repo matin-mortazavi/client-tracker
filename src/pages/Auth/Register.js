@@ -102,7 +102,9 @@ function RegisterPage() {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode : "onBlur"
+  });
   console.log(errors);
   const handlePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -155,6 +157,11 @@ function RegisterPage() {
               <label>ایمیل</label>
              
             </div>
+            {errors.email &&
+                
+               
+                <p className={styles["error-messege"]}>{errors.email.message}</p>
+              }
             <div
               className={
                 watch("password")
@@ -189,6 +196,11 @@ function RegisterPage() {
               ></img>
               
             </div>
+            {errors.password &&
+                
+               
+                <p className={styles["error-messege"]}>{errors.password.message}</p>
+              }
 
             <button className={styles["form__btn"]} type="submit">
               ثبت نام

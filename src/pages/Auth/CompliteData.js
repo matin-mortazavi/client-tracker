@@ -20,7 +20,10 @@ function CompliteData(data) {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+
+  } = useForm({
+    mode : "onBlur"
+  });
   console.log(errors);
   const handleageVisibility = () => {
     setageVisible(!ageVisible);
@@ -73,6 +76,11 @@ function CompliteData(data) {
               <label>نام</label>
              
             </div>
+            {errors.name &&
+                
+               
+                <p className={styles["error-messege"]}>{errors.name.message}</p>
+              }
 
             <div
               className={`${styles.inputField} ${
@@ -85,7 +93,7 @@ function CompliteData(data) {
                 name="age"
                 control={control}
                 rules={{ required: "age is required" }}
-                defaultValue={0}
+                defaultValue={""}
                 render={({ field }) => (
                   <>
                     <img
@@ -106,7 +114,11 @@ function CompliteData(data) {
               <label>سن </label>
               
             </div>
-
+            {errors.age &&
+                
+               
+                <p className={styles["error-messege"]}>{errors.age.message}</p>
+              }
             <button className={styles["form__btn"]} type="submit">
               تایید
             </button>
