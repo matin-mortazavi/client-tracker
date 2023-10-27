@@ -5,6 +5,8 @@
     height: 35rem;
     min-height: auto;
     background-color: #FAFAFA;
+    z-index: -1;
+    box-shadow: 0 0 10px 2px rgba(128, 128, 128, 0.272);
 }
 .Calendar__day.-rtl{
     font-size: 1.8rem;

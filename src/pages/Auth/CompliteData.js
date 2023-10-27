@@ -10,7 +10,7 @@ import eye from "../../assets/SVGs/eye-slash.svg";
 import calendar from "../../assets/SVGs/calendar.svg";
 import { useLocation } from "react-router-dom";
 import registerUser from "../../services/registerUser";
-import Alert from "../../components/alert/Alert";
+import Alert from "../../components/Common/alert/Alert";
 
 function CompliteData(data) {
   const location = useLocation();
@@ -23,9 +23,8 @@ function CompliteData(data) {
     handleSubmit,
     watch,
     formState: { errors },
-
   } = useForm({
-    mode : "onBlur"
+    mode: "onBlur",
   });
   console.log(errors);
   const handleageVisibility = () => {
@@ -34,15 +33,12 @@ function CompliteData(data) {
   };
   // console.log(location.state , 'hi');
 
-  const onSubmit = async(data) => {
-   
-
-   
+  const onSubmit = async (data) => {
     // You can handle registration logic here
     data.age = Number(data.age);
     const newUser = { ...location.state.data, ...data };
     registerUser(newUser);
-    const type = await  registerUser(newUser);;
+    const type = await registerUser(newUser);
 
     setType(type);
     console.log(alertType);
@@ -55,11 +51,10 @@ function CompliteData(data) {
 
   return (
     <div className={styles["form-wrapper"]}>
-       {showAlert && (
+      {showAlert && (
         <Alert
-         text = "طلاعات وارد شده اشتباه است"
-          title= "خطا"
-         
+          text="طلاعات وارد شده اشتباه است"
+          title="خطا"
           type={type}
         ></Alert>
       )}
@@ -96,13 +91,10 @@ function CompliteData(data) {
                 )}
               />
               <label>نام</label>
-             
             </div>
-            {errors.name &&
-                
-               
-                <p className={styles["error-messege"]}>{errors.name.message}</p>
-              }
+            {errors.name && (
+              <p className={styles["error-messege"]}>{errors.name.message}</p>
+            )}
 
             <div
               className={`${styles.inputField} ${
@@ -134,13 +126,10 @@ function CompliteData(data) {
                 valueAsNumber={true}
               />
               <label>سن </label>
-              
             </div>
-            {errors.age &&
-                
-               
-                <p className={styles["error-messege"]}>{errors.age.message}</p>
-              }
+            {errors.age && (
+              <p className={styles["error-messege"]}>{errors.age.message}</p>
+            )}
             <button className={styles["form__btn"]} type="submit">
               تایید
             </button>

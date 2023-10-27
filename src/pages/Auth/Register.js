@@ -91,7 +91,7 @@ import { useState } from "react";
 import eye from "../../assets/SVGs/eye-slash.svg";
 import { Link, Navigate } from "react-router-dom";
 import { redirect } from "react-router-dom";
-import Alert from "../../components/alert/Alert";
+import Alert from "../../components/Common/alert/Alert";
 import { useNavigate } from "react-router-dom";
 
 import { registerUser } from "../../services/registerUser";
@@ -103,7 +103,7 @@ function RegisterPage() {
     watch,
     formState: { errors },
   } = useForm({
-    mode : "onBlur"
+    mode: "onBlur",
   });
   const [showAlert, setShowAlert] = useState(false);
   let alertType;
@@ -111,23 +111,20 @@ function RegisterPage() {
   console.log(errors);
   const handlePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
-   
   };
 
   const navigate = useNavigate();
 
-  const onSubmit = async(data) => {
-   
+  const onSubmit = async (data) => {
     navigate("/complite-data/", { state: { data } });
   };
 
   return (
     <div className={styles["form-wrapper"]}>
-       {showAlert && (
+      {showAlert && (
         <Alert
-         text = "طلاعات وارد شده اشتباه است"
-          title= "خظا"
-         
+          text="طلاعات وارد شده اشتباه است"
+          title="خظا"
           type={type}
         ></Alert>
       )}
@@ -164,13 +161,10 @@ function RegisterPage() {
                 )}
               />
               <label>ایمیل</label>
-             
             </div>
-            {errors.email &&
-                
-               
-                <p className={styles["error-messege"]}>{errors.email.message}</p>
-              }
+            {errors.email && (
+              <p className={styles["error-messege"]}>{errors.email.message}</p>
+            )}
             <div
               className={
                 watch("password")
@@ -197,19 +191,17 @@ function RegisterPage() {
               />
               <label>پسورد</label>
               <img
-                
                 className={styles["password-icon"]}
                 src={eye}
                 alt=""
                 onClick={handlePasswordVisibility}
               ></img>
-              
             </div>
-            {errors.password &&
-                
-               
-                <p className={styles["error-messege"]}>{errors.password.message}</p>
-              }
+            {errors.password && (
+              <p className={styles["error-messege"]}>
+                {errors.password.message}
+              </p>
+            )}
 
             <button className={styles["form__btn"]} type="submit">
               ثبت نام

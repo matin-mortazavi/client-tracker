@@ -10,7 +10,7 @@ import eye from "../../assets/SVGs/eye-slash.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import loginUser from "../../services/LoginService";
-import Alert from "../../components/alert/Alert";
+import Alert from "../../components/Common/alert/Alert";
 
 function RegisterPage() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -48,9 +48,8 @@ function RegisterPage() {
     <div className={styles["form-wrapper"]}>
       {showAlert && (
         <Alert
-         text = "طلاعات وارد شده اشتباه است"
-          title= "خطا"
-         
+          text="طلاعات وارد شده اشتباه است"
+          title="خطا"
           type={type}
         ></Alert>
       )}
@@ -72,7 +71,7 @@ function RegisterPage() {
               <Controller
                 name="email"
                 control={control}
-                rules={{  required: "این فیلد الزامی است" }}
+                rules={{ required: "این فیلد الزامی است" }}
                 defaultValue={""}
                 render={({ field }) => (
                   <>
