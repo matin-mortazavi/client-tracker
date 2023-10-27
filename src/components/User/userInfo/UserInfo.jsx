@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./UserInfo.module.scss"
-import  profile from "../../assets/images/profile.png"
-import  notif from "../../assets/SVGs/notification-bing.svg"
+import  profile from "../../../assets/images/profile.png"
+import  notif from "../../../assets/SVGs/notification-bing.svg"
 
 
 export default function UserInfo() {

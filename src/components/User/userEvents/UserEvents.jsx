@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./UserEvents.module.scss"
-import plus from "../../assets/SVGs/Plus.svg"
+import plus from "../../../assets/SVGs/Plus.svg"
 import EventItem from './eventItem/EventItem'
 export default function Events() {
   return (
