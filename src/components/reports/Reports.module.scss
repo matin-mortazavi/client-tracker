@@ -4,7 +4,7 @@
     @include flex-container(center,center,column);
     // display: flex;
     // flex-direction: column;
-    margin-bottom: 2rem
+    margin-bottom: 5.6rem
 }
 .reports-details{
     @include flex-container(space-between,center,row);
@@ -80,10 +80,10 @@
     .reports-filtering__item{
         font-size: 1rem;
         margin: 0 .6rem;
-        background-color: white;
+     
         padding: .3rem .6rem;
         border-radius: .9rem;
-        box-shadow: $shadow;
+      
       
      }
      .report-item{
@@ -94,6 +94,9 @@
        
         margin-right: 1.5rem;  
     
+     }
+     .reports{
+        margin-bottom: 4.2rem;
      }
     
  }

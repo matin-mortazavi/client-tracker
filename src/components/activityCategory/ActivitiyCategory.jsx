@@ -7,7 +7,7 @@ export default function Events() {
   return (
     <div className={styles["events"]}>
     <div className={styles["events-details"]}>
-      <p className={styles["events-title"]}> فعالیت ها</p>
+      <p className={styles["events-title"]}>  نوع فعالیت</p>
     
     </div>
    

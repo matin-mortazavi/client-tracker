@@ -2,7 +2,7 @@
 @import "../../styles/abstracts/variables";
 .sidebar{
    position: fixed;
-  right: 1.3rem;
+  right:  calc(8rem - 5.6rem);
    
     padding: 8.6rem 0 ;
     height: 100vh;
@@ -59,7 +59,8 @@
 @media screen and (max-width:1440px) {
     .sidebar{
         padding: 6.45rem 0 ;
-        right: 9.5rem;
+       
+        right:  calc(6rem - 4.2rem);
     }
     .sidebar__icon{
         width: 2.4rem;
